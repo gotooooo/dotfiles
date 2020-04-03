@@ -52,3 +52,6 @@ function history-selection() {
 }
 zle -N history-selection
 bindkey '^R' history-selection
+
+# k8s
+EDITOR="vim"
