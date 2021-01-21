@@ -15,22 +15,10 @@ sudo xcode-select --switch /Library/Developer/CommandLineTools
 ### Homebrew をインストール
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 ## 設定
-
-### Homebrew でアプリケーションをインストール
-
-```
-brew bundle
-```
-
-途中でパスワードを聞かれるので入力すること
-
-### Git User と Email を設定する
-
-`.gitconfig.github` の内容を自分のアカウントの情報に変更する
 
 ### Prezto, zsh, git, macOSの設定
 
@@ -45,6 +33,18 @@ brew bundle
 ```
 
 macOSの設定を反映するためPCを再起動する
+
+### Homebrew でアプリケーションをインストール
+
+```
+brew bundle
+```
+
+途中でパスワードを聞かれるので入力すること
+
+### Git User と Email を設定する
+
+`.gitconfig.github` の内容を自分のアカウントの情報に変更する
 
 ### vim
 
