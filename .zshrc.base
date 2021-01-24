@@ -1,5 +1,5 @@
 # load sshkey from KeyChain
-ssh-add -K
+ssh-add -K &> /dev/null
 
 # config home
 export XDG_CONFIG_HOME=$HOME/dotfiles
@@ -26,3 +26,28 @@ export SAVEHIST=100000
 
 # k8s
 EDITOR="vim"
+
+# auto completion
+zinit light zsh-users/zsh-autosuggestions
+zinit ice wait'0'; zinit light zsh-users/zsh-completions
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*:default' menu select=1
+
+# syntax-highlight
+zinit light zdharma/fast-syntax-highlighting
+
+# history-search
+zinit light zdharma/history-search-multi-word
+
+# search repo
+function ghq-fzf() {
+  local src=$(ghq list | fzf --preview "ls -laTp $(ghq root)/{} | tail -n+4 | awk '{print \$9\"/\"\$6\"/\"\$7 \" \" \$10}'")
+  if [ -n "$src" ]; then
+    BUFFER="cd $(ghq root)/$src"
+    zle accept-line
+  fi
+  zle -R -c
+}
+zle -N ghq-fzf
+bindkey '^]' ghq-fzf
