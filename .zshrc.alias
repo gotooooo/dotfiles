@@ -12,7 +12,7 @@ alias_if_exists exa tree 'exa -T'
 alias_if_exists nvim vi 'nvim'
 alias_if_exists colordiff diff 'colordiff -u'
 alias_if_exists htop top 'htop'
-alias_if_exists ghq repo 'cd $(ghq root)/$(ghq list | fzf --preview "cat $(ghq root)/{}/README.md")'↲
+alias_if_exists ghq cr 'cd $(ghq root)/$(ghq list | fzf --preview "cat $(ghq root)/{}/README.md")'↲
 
 # https://github.com/remind101/assume-role
 alias assume-role='function(){eval $(command assume-role $@);}'

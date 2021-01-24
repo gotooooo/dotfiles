@@ -20,15 +20,21 @@ sudo xcode-select --switch /Library/Developer/CommandLineTools
 
 ## 設定
 
-### Prezto, zsh, git, macOSの設定
+### zinit をインストール
+
+https://github.com/zdharma/zinit#installation
+
+### powerlevel10k をインストール
+
+https://github.com/romkatv/powerlevel10k#installation
+
+### zinit, zsh, git, macOSの設定
 
 以下のスクリプトを順番に実行する
 
 ```
-./install_prezto.sh
 ./update_zshrc.sh
 ./git_files.sh
-./remove_cache.sh
 ./configure_macos_env.sh
 ```
 
@@ -40,13 +46,11 @@ macOSの設定を反映するためPCを再起動する
 brew bundle
 ```
 
-途中でパスワードを聞かれるので入力すること
-
 ### Git User と Email を設定する
 
 `.gitconfig.github` の内容を自分のアカウントの情報に変更する
 
-### vim
+### vim (neovim の apple silicon 対応待ち)
 
 適当なファイルをvimで開く
 しばらく待つとプラグインがインストールされる
