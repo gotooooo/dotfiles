@@ -23,6 +23,13 @@ export KUBECTX_CURRENT_BGCOLOR=$(tput setab 0)
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=100000
 export SAVEHIST=100000
+function history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | fzf`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+zle -N history-selection
+bindkey '^R' history-selection
 
 # k8s
 EDITOR="vim"
@@ -36,9 +43,6 @@ zstyle ':completion:*:default' menu select=1
 
 # syntax-highlight
 zinit light zdharma/fast-syntax-highlighting
-
-# history-search
-zinit light zdharma/history-search-multi-word
 
 # search repo
 function ghq-fzf() {
