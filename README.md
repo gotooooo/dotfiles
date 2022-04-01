@@ -8,31 +8,35 @@ see :eyes: https://developer.apple.com/download/more/
 
 ### Command Line Tools を利用する
 
-```
+```shell
 sudo xcode-select --switch /Library/Developer/CommandLineTools
 ```
 
 ### Homebrew をインストール
 
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+https://brew.sh
+
+### rosseta をインストール
+
+```shell
+sudo softwareupdate --install-rosetta
 ```
 
 ## 設定
 
-### zinit をインストール
+### zimfw をインストール
 
-https://github.com/zdharma/zinit#installation
+https://zimfw.sh/#install
 
 ### powerlevel10k をインストール
 
 https://github.com/romkatv/powerlevel10k#installation
 
-### zinit, zsh, git, macOSの設定
+### git, macOSの設定
 
-以下のスクリプトを順番に実行する
+以下のスクリプトを実行する
 
-```
+```shell
 ./update_zshrc.sh
 ./git_files.sh
 ./configure_macos_env.sh
@@ -42,9 +46,18 @@ macOSの設定を反映するためPCを再起動する
 
 ### Homebrew でアプリケーションをインストール
 
-```
+```shell
 brew bundle
 ```
+
+nerdctl などで lima を使いたい場合
+
+```shell
+limactl start
+```
+
+バグかわからないが一度 `limactl stop` してから再度 `limactl start` するとうまくいく
+`limactl stop` 自体もエラーとなる
 
 ### Git User と Email を設定する
 
@@ -84,14 +97,19 @@ example is below
 - Profiles
   - Colors
     - Color Presets: Pastel
+  - Text
+    - FontSize: 14
   - Window
     - Column: 200
     - Rows: 50
     - Transparency: 25
 
+
+
 ### IME の設定
 
+- ABC削除のため、かな入力の英字にチェックを入れる
 - 日本語: ひらがな(google) を追加
 - 英語: 英数(google) を追加
 - 日本語やABCなどデフォルトのものを削除
-
+- 再起動

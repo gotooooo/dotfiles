@@ -14,11 +14,11 @@ alias_if_exists colordiff diff 'colordiff -u'
 alias_if_exists htop top 'htop'
 
 # https://github.com/remind101/assume-role
-alias assume-role='function(){eval $(command assume-role $@);}'
+alias assume-role='function(){eval $(command \assume-role $@);}'
 
 # reload zsh
 alias reload='exec zsh -l'
 
 # container
-alias dcc='docker-compose'
+alias nerdctl='lima nerdctl'
 alias k='kubectl'
