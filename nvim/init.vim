@@ -1,21 +1,49 @@
 let g:python3_host_prog = system('echo -n $(which python3)')
 
+" encoding settings
+set fenc=utf-8
+set fencs=utf-8,iso-2022-jp,euc-jp,sjis
+set enc=utf-8
+
+" display settings
+set title
+set number
+set laststatus=2
+set statusline=%<%F%m%h%w\ %=[ENC=%{&fenc!=''?&fenc:&enc}]\ [FMT=%{&ff}]\ [TYPE=%Y]\ [CODE=0x%02B]\ [POS=%l/%L(%02v)]
+set showmatch
+set showcmd
+set list
+set listchars=tab:»-,trail:_,eol:↲,extends:»,precedes:«,nbsp:%
+set visualbell
+syntax on
+"" remove highlights by typing esc key twice
+nnoremap <ESC><ESC> :nohl<CR>
+
+" backspace settings
+set backspace=indent,eol,start
+
+" file operation settings
+set nobackup
+set noswapfile
+set hidden
+
+" search settings
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set wrapscan
+
+"indent
 set expandtab
 set tabstop=2
 set shiftwidth=2
-set incsearch
-set number
-set hlsearch
-set showcmd
-set laststatus=2
-set showmatch
-set title
+set softtabstop=2
+set autoindent
 set smartindent
-set list
-set listchars=tab:»-,trail:_,eol:↲,extends:»,precedes:«,nbsp:%
-set noswapfile
+
+" clipboard settings
 set clipboard+=unnamedplus
-set visualbell
 
 let mapleader = "\<Space>"
 nnoremap <silent><unique> <Leader>c :<C-u>setlocal cursorline! cursorcolumn!<CR>
@@ -64,4 +92,3 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
-
