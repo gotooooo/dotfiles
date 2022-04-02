@@ -32,6 +32,20 @@ https://zimfw.sh/#install
 
 https://github.com/romkatv/powerlevel10k#installation
 
+### goenv, go をインストール
+
+homebrew の goenv は更新されていないみたいなので、 git clone して利用する
+
+```shell
+git clone https://github.com/syndbg/goenv.git ~/.goenv
+```
+
+```shell
+# 最新バージョンをインストールする
+goenv install 1.18.0
+goenv global 1.18.0
+```
+
 ### git, macOSの設定
 
 以下のスクリプトを実行する
