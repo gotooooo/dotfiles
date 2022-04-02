@@ -56,7 +56,7 @@ goenv global 1.18.0
 ./configure_macos_env.sh
 ```
 
-macOSの設定を反映するためPCを再起動する
+macOS の設定を反映するため PC を再起動する
 
 ### Homebrew でアプリケーションをインストール
 
@@ -70,21 +70,21 @@ nerdctl などで lima を使いたい場合
 limactl start
 ```
 
-バグかわからないが一度 `limactl stop` してから再度 `limactl start` するとうまくいく
-`limactl stop` 自体もエラーとなる
+バグかわからないが一度 `limactl stop` してから再度 `limactl start` するとうまくいった
+#31 で調査中
 
 ### Git User と Email を設定する
 
 `.gitconfig.github` の内容を自分のアカウントの情報に変更する
 
-### vim (neovim の apple silicon 対応待ち)
+### vim
 
-適当なファイルをvimで開く
+適当なファイルを neovim で開く
 しばらく待つとプラグインがインストールされる
 
 ## ローカル設定
 
-`.zshrc.local` はgit管理されていないので、ここに追記する
+`.zshrc.local` は git 管理されていないので、ここに追記する
 
 ## その他
 
@@ -106,19 +106,7 @@ Identity added: /Users/{user_name}/.shh/id_ed25519
 
 ### iTerm2 の設定
 
-example is below
-
-- Profiles
-  - Colors
-    - Color Presets: Pastel
-  - Text
-    - FontSize: 14
-  - Window
-    - Column: 200
-    - Rows: 50
-    - Transparency: 25
-
-
+iterm2 の Profilee 設定で `iterm2/settings.json` を import する
 
 ### IME の設定
 
