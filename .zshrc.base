@@ -39,6 +39,20 @@ function ghq-fzf() {
 zle -N ghq-fzf
 bindkey '^]' ghq-fzf
 
+# search history
+function select-history() {
+  BUFFER=$(history -n -r 1 | fzf --exact --reverse --query="$LBUFFER" --prompt="> ")
+  CURSOR=${#BUFFER}
+}
+zle -N select-history
+bindkey '^r' select-history
+
 # docker
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
+
+# fnm
+eval "$(fnm env --use-on-cd)"
+
+# terraform
+export GODEBUG=asyncpreemptoff=1

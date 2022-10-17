@@ -37,3 +37,5 @@
   path = ~/.gitconfig.github
 [includeIf "gitdir:~/dotfiles/"]
   path = ~/.gitconfig.github
+[init]
+	defaultBranch = main
